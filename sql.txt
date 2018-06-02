@@ -1,0 +1,22 @@
+create table customer(cin number primary key,password varchar2(20),user_name varchar2(50),phone number,email varchar2(100),plan_id number);
+
+create table admin(CIN number primary key,password varchar2(20),name varchar2(50),phone number,email varchar2(100));
+
+create table store(store_id number primary key,location varchar2(20) check (location in('BANGALORE','CHENNAI','HYDERABAD','DELHI','PUNE','MUMBAI')),address varchar2(100),phone number,email varchar2(100));
+
+create table plan(plan_id number primary key,plan_name varchar2(50),plan_amount number,plan_type varchar2(20) check (plan_type in('PREPAID','POSTPAID')));
+
+create table issue(issue_id number primary key,user_id number,issue varchar2(250));
+--------------------------------------------------------------------------------------------------------------------
+insert into customer values(1001, 'abcd1234', 'Krish', 9875643521, 'krish123@gmail.com', 456);
+
+insert into admin values(2001, 'efgh5678', 'Ramesh', 9875309412, 'ramesh123@gmail.com');
+
+insert into store
+values(3001, 'BANGALORE', '#28,3rd cross Saraswathipura, Nandini Layout, Bangalore', 9087354262, 'bala123@gmail.com');
+
+insert into plan
+values(4001, 'Migration_PV_PV_485', 485, 'PREPAID');
+
+insert into issue
+values(5001,1001, 'network coverage');
